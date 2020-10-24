@@ -10,9 +10,9 @@ const Header = () => {
             <div className = 'nullHeader'></div>
             <Link to = '/'>Inicio</Link>
             <div className = 'nullHeader'></div>
-            <Link to = '/Login'>Login</Link>
+            <Link to = '/login'>Login</Link>
             <div className = 'nullHeader'></div>
-            <Link to = '/Registro'>Registro</Link>
+            <Link to = '/signup'>Registro</Link>
             <div>
             
             </div>
