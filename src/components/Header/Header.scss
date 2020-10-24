@@ -1,11 +1,19 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;;
     height: 6em;
-    
-    a {
-        all: unset;
+
+    div {
+        width: 3em;
+    }
+
+    a { 
+        text-decoration: none;
+        color: #3f72af;
+            
+    &:hover {
         cursor: pointer;
+        color: #112d4e;
         }
+    }
 }

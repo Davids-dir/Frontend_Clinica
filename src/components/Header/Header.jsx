@@ -7,11 +7,11 @@ const Header = () => {
     return (
         
         <header className = 'header'>
-            <span className = 'nullHeader'></span>
+            <div className = 'nullHeader'></div>
             <Link to = '/'>Inicio</Link>
-            <span className = 'nullHeader'></span>
+            <div className = 'nullHeader'></div>
             <Link to = '/Login'>Login</Link>
-            <span className = 'nullHeader'></span>
+            <div className = 'nullHeader'></div>
             <Link to = '/Registro'>Registro</Link>
             <div>
             
