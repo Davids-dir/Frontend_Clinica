@@ -1,5 +1,5 @@
 // Importo las dependencias necesarias
-import React, { useState, notification } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 import './SignUp.scss';
@@ -23,16 +23,11 @@ const SignUp = () => {
 
         axios.post ( process.env.REACT_APP_BASE_URL + '/customers/signup', customer )
             .then (res => {
-                console.log ( res.data )
-                notification.success ({ message: 'Tu usuario ha sido registrado con exito.' })
+                console.log ( customer )
             })
             .catch (error => {
-                notification.error({ error, message: 'Se ha producido un error en el registro.' })
+                console.log (error)
             })
-
-            setTimeout (() => {
-                history.push ( '/dates/show/_id' )
-            }, 1500);
     };
 
     return (
