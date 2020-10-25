@@ -8,7 +8,7 @@ import './SignUp.scss';
 const SignUp = () => {
 
     // HOOK
-    const [customer, setCustomer] = useState({
+    const [NewCustomer, setNewCustomer] = useState({
         name: "",
         surname: "",
         email: "",
@@ -16,14 +16,22 @@ const SignUp = () => {
     })
 
     // Manejador de eventos
-    const handleEvent = ev => { setCustomer({ ...customer, [ev.target.name]: ev.target.type === "number" ? +ev.target.value : ev.target.value }); };
+    const handleEvent = ev => { setNewCustomer({ ...NewCustomer, [ev.target.name]: ev.target.type === "number" ? +ev.target.value : ev.target.value }); };
 
     // POST hacia la base de datos
-     const  Singup = () => {
+     const  Send = () => {
 
-        axios.post ( process.env.REACT_APP_BASE_URL + '/customers/signup', customer )
+        let body = {
+            name: NewCustomer.name,
+            surname: NewCustomer.surname,
+            email: NewCustomer.email,
+            password: NewCustomer.password
+        };
+
+        axios.post ( 'https://backend-clinica-dental.herokuapp.com/customers/signup', body )
+
             .then (res => {
-                console.log ( customer )
+                console.log ( body )
             })
             .catch (error => {
                 console.log (error)
@@ -42,7 +50,7 @@ const SignUp = () => {
                 </label>
                 <label>Constraseña: <input type="text" name='password' placeholder='Introduce tu contraseña' onChange={handleEvent} />
                 </label>
-                <button type='submit' onClick={ Singup }>Finalizar</button>
+                <button type='submit' onClick={ () =>  { Send () }}>Enviar</button>
             </form>
         </div>
     )
