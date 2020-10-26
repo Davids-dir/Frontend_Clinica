@@ -7,15 +7,14 @@ const Header = () => {
     return (
         
         <header className = 'header'>
+
             <div className = 'nullHeader'></div>
             <Link to = '/'>Inicio</Link>
             <div className = 'nullHeader'></div>
             <Link to = '/login'>Login</Link>
             <div className = 'nullHeader'></div>
             <Link to = '/signup'>Registro</Link>
-            <div>
             
-            </div>
         </header>
     )
 }
