@@ -6,6 +6,10 @@ form {
     height: 16em;
 }
 
+label {
+    text-align: center;
+}
+
 p {
     width: 0.2em;
 }
@@ -16,5 +20,6 @@ input{
 }
 
 button {
+    margin-top: 1.5%;
     width: 6em;
 }

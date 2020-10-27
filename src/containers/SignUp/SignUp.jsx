@@ -17,6 +17,7 @@ const SignUp = () => {
         password: ""
     });
 
+    // Importo la funcion para redirigir al cliente
     const redirect = useHistory ();
 
     // Manejador de eventos
@@ -26,7 +27,7 @@ const SignUp = () => {
      const  Send = () => {
         
         axios.post ( 'https://backend-clinica-dental.herokuapp.com/customers/signup', customer )
-        .then (res => console.log ( res.data ))
+        .then (res => console.log ( res.data ).send ({ message: 'Te has registrado con exito.' }))
         .catch (error => { console.log (error)})
 
         setTimeout (() => {
@@ -38,10 +39,10 @@ const SignUp = () => {
 
         <div>
             <form>
-                <label>Nombre:<p></p><input type="text" name='name' onChange={handleEvent} /></label>
-                <label>Apellidos:<p></p><input type="text" name='surname' onChange={handleEvent} /></label>
-                <label>Email:<p></p><input type="email" name='email' onChange={handleEvent} /></label>
-                <label>Constraseña:<p></p><input type="text" name='password' onChange={handleEvent} /></label>
+                <label>Nombre:<p></p><input type="text" name='name' placeholder='Nombre' onChange={handleEvent} /></label>
+                <label>Apellidos:<p></p><input type="text" name='surname' placeholder='Apellidos' onChange={handleEvent} /></label>
+                <label>Email:<p></p><input type="email" name='email' placeholder='Correo electronico' onChange={handleEvent} /></label>
+                <label>Constraseña:<p></p><input type="text" name='password' placeholder='Contraseña' onChange={handleEvent} /></label>
                 <button  type="button" onClick={ () =>  { Send () }}>Enviar</button>
             </form>
         </div>
