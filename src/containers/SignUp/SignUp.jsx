@@ -1,5 +1,6 @@
 // Importo las dependencias necesarias
 import React, { useState } from 'react';
+import {useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 // Importo la hoja de estilos
@@ -16,6 +17,8 @@ const SignUp = () => {
         password: ""
     });
 
+    const redirect = useHistory ();
+
     // Manejador de eventos
     const handleEvent = ev => { setCustomer ({ ...customer, [ev.target.name]: ev.target.type === "number" ? +ev.target.value : ev.target.value })};
 
@@ -23,8 +26,12 @@ const SignUp = () => {
      const  Send = () => {
         
         axios.post ( 'https://backend-clinica-dental.herokuapp.com/customers/signup', customer )
-        .then (res => { console.log ( res.data )})
+        .then (res => console.log ( res.data ))
         .catch (error => { console.log (error)})
+
+        setTimeout (() => {
+            redirect.push ('/')
+        }, 1500)
     }
 
     return (
