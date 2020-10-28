@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import  Header from './components/Header/Header';
 import SignUp from './containers/SignUp/SignUp';
 import Login from './containers/Login/Login';
+import Profile from './containers/Profile/Profile';
 
 import './App.css';
 
@@ -17,8 +18,9 @@ function App () {
 
       <Switch>
         
-          <Route path='/login' component={Login} exact />
-          <Route path='/signup' component={SignUp} exact/>
+          <Route path='/login' component={ Login } exact />
+          <Route path='/signup' component={ SignUp } exact />
+          <Route path='/profile' component={ Profile } exact />
           
       </Switch>
 

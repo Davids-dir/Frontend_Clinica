@@ -14,6 +14,11 @@ const Header = () => {
             <Link to = '/login'>Login</Link>
             <div className = 'nullHeader'></div>
             <Link to = '/signup'>Registro</Link>
+            <div id='nullTitulo'></div>
+            <div className='titulo'><h1>Clínica Dental</h1></div>
+            <div id='nullTitulo'></div>
+            <div className='imagenLogo'></div>
+
             
         </header>
     )

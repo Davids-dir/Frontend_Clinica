@@ -1,20 +1,43 @@
+@import 'https://fonts.googleapis.com/css2?family=Pacifico&display=swap';
+
 .header {
     display: flex;
     align-items: center;
     height: 6em;
+    width: 100%;
     background-color: #3f72af;
+}
 
-    div {
-        width: 4em;
-    }
+.nullHeader  {
+    width: 4em;
+}
 
-    a { 
-        text-decoration: none;
-        color: whitesmoke;
+#nullTitulo {
+    width: 25em;
+}
+
+.imagenLogo {
+    background-image: url(../../img/logo.svg);
+    background-size: 100%;
+    height: 5em;
+    width: 5em;
+    margin-left: 10%;
+}
+
+.titulo {
+        font-family: 'Pacifico', cursive;
+        color: white;
+        width: 20em;
+        text-align: center;
+        font-size: x-large;
+}
+
+a { 
+    text-decoration: none;
+    color: whitesmoke;
             
-    &:hover {
-        cursor: pointer;
-        color: #112d4e;
-        }
+&:hover {
+    cursor: pointer;
+    color: #112d4e;
     }
 }
