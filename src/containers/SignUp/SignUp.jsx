@@ -13,6 +13,7 @@ const SignUp = () => {
     const [customer, setCustomer] = useState({
         name: "",
         surname: "",
+        phone: {},
         email: "",
         password: ""
     });
@@ -39,10 +40,16 @@ const SignUp = () => {
 
         <div>
             <form>
-                <label>Nombre:<p></p><input type="text" name='name' placeholder='Nombre' onChange={handleEvent} /></label>
-                <label>Apellidos:<p></p><input type="text" name='surname' placeholder='Apellidos' onChange={handleEvent} /></label>
-                <label>Email:<p></p><input type="email" name='email' placeholder='Correo electronico' onChange={handleEvent} /></label>
-                <label>Constraseña:<p></p><input type="text" name='password' placeholder='Contraseña' onChange={handleEvent} /></label>
+                <label>Nombre</label>
+                <input type="text" name='name' placeholder='Nombre' onChange={handleEvent} />
+                <label>Apellido</label>
+                <input type="text" name='surname' placeholder='Apellidos' onChange={handleEvent} />
+                <label>Teléfono</label>
+                <input type="text" name="phone" placeholder="Teléfono" onChange={handleEvent} />
+                <label>Email</label>
+                <input type="email" name='email' placeholder='Correo electronico' onChange={handleEvent} />
+                <label>Constraseña</label>
+                <input type="text" name='password' placeholder='Contraseña' onChange={handleEvent} />
                 <button  type="button" onClick={ () =>  { Send () }}>Enviar</button>
             </form>
         </div>

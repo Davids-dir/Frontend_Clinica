@@ -48,10 +48,10 @@ const Login = () => {
 
         <div className='divLogin'>
             <form>
-                <label>Email:<p></p><input type="email" name='email' placeholder='Correo electronico' onChange={handleEvent} />
-                </label>
-                <label>Constraseña:<p></p><input type="text" name='password' placeholder='Contraseña' onChange={handleEvent} />
-                </label>
+                <label>Email</label>
+                <input type="email" name='email' placeholder='Correo electronico' onChange={handleEvent} />
+                <label>Constraseña</label>
+                <input type="text" name='password' placeholder='Contraseña' onChange={handleEvent} />
                 <button type='button' onClick={ () => { Send () }}>Enviar</button>
             </form>
         </div>
