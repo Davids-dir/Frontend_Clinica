@@ -1,0 +1,32 @@
+.divProfile {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+}
+
+.nullProfile {
+    height: 10vh;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50vh;
+    color: black
+}
+
+li {
+    list-style: none;
+    color: black
+}
+
+.profileLink {
+    text-decoration: none;
+    color: black;
+
+    &:hover{
+        cursor: pointer;;
+        color: blue;;
+    }
+}

@@ -8,7 +8,7 @@ import './Login.scss';
 const Login = () => {
 
     // HOOK
-    const [Customer, setCustomer] = useState({
+    const [customer, setCustomer] = useState({
         name: "",
         surname: "",
         email: "",
@@ -19,29 +19,32 @@ const Login = () => {
     const redirect = useHistory ();
 
     // Manejador de eventos
-    const handleEvent = ev => { setCustomer({ ...Customer, [ev.target.name]: ev.target.type === "number" ? +ev.target.value : ev.target.value }); };
+    const handleEvent = ev => { setCustomer({ ...customer, [ev.target.name]: ev.target.type === "number" ? +ev.target.value : ev.target.value }); };
 
     const Send = () => {
 
-        let body = {
-            name: Customer.name,
-            surname: Customer.surname,
-            email: Customer.email,
-            password: Customer.password
-        };
+        /*const body = {
+            name: customer.name,
+            surname: customer.surname,
+            email: customer.email,
+            password: customer.password
+        };*/
 
-        axios.post('https://backend-clinica-dental.herokuapp.com/customers/login', body)
+        axios.post ( 'http://localhost:3001/customers/login', customer )
+        // 'https://backend-clinica-dental.herokuapp.com/customers/login'
 
-            .then(res =>
-                console.log (res.data).send ({ message: `Bienvenido de nuevo ${Customer.name}.` }))
+            .then ( res => {
 
-            .catch(error => {
-                console.log(error)
+                localStorage.setItem ('token', res.data.token)
+                console.log (res.data)
+                
+                    setTimeout (() => {
+                        redirect.push ('/profile')
+                    }, 1200);
             })
-
-            setTimeout (() => {
-                redirect.push ('/')
-            }, 1500)
+            .catch ( error => {
+                console.log ( error  )      
+            })
     };
 
     return (
