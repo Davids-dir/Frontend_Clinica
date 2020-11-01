@@ -9,6 +9,7 @@ import Login from './containers/Login/Login';
 import Profile from './containers/Profile/Profile';
 
 import './App.css';
+import { CreateDate } from './containers/CreateDate/CreateDate';
 
 function App () {
   return (
@@ -22,6 +23,7 @@ function App () {
           <Route path='/login' component={ Login } exact />
           <Route path='/signup' component={ SignUp } exact />
           <Route path='/profile' component={ Profile } exact />
+          <Route path='/createdate' component={ CreateDate } exact />
           
       </Switch>
 

@@ -1,11 +1,18 @@
 .divProfile {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 60vh;
 }
 
-.nullProfile {
+.nullTop {
     height: 10vh;
+    width: 100vw;
+}
+
+.nullProfile {
+    text-align: start;
+    height: 10vh;
+    width: 50vw;
 }
 
 ul {
@@ -13,6 +20,7 @@ ul {
     flex-direction: column;
     justify-content: space-around;
     height: 50vh;
+    width: 50vw;
     color: black
 }
 
@@ -29,4 +37,10 @@ li {
         cursor: pointer;;
         color: blue;;
     }
+}
+
+.renderDiv {
+    text-align: center;
+    height: 50vh;
+    width: 50vw;
 }

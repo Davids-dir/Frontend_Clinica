@@ -35,7 +35,8 @@ const Login = () => {
 
             .then ( res => {
 
-                localStorage.setItem ('token', res.data.token)
+                localStorage.setItem ('token', res.data.token);
+                localStorage.setItem('customer', JSON.stringify( res.data.customer ));
                 console.log (res.data)
                 
                     setTimeout (() => {
@@ -43,7 +44,7 @@ const Login = () => {
                     }, 1200);
             })
             .catch ( error => {
-                console.log ( error  )      
+                console.log ( error  )  
             })
     };
 

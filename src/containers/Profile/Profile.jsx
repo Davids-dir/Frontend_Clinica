@@ -10,14 +10,14 @@ const Profile = () => {
     return (
 
         <div className = 'divProfile'>
-            <div className = 'nullProfile'>Panel de control</div>
+            <div className = 'nullTop'>Espacio</div>
+            <div className = 'nullProfile'>Panel de control
                 <ul>
                     <li><Link to = '/createdate' className = 'profileLink'>Reservar cita</Link></li>
                     <li><Link to = '/showdate' className = 'profileLink'>Mostrar citas</Link></li>
-                    <li><Link to = '/deletedate' className = 'profileLink'>Cancelar cita</Link></li>
                 </ul>
-            
-            
+            </div>
+            <div className = 'renderDiv'>Prueba</div>
         </div>
     )
 }

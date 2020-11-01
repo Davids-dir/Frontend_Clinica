@@ -3,7 +3,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
 
-const Header = () => {
+const Header = ({ customer, setCustomer }) => {
+    
+    const logout = () => {
+        localStorage.removeItem ('customer');
+        localStorage.removeItem ('authToken');
+        setCustomer ( null )
+    }
+
     return (
         
         <header className = 'header'>
@@ -18,6 +25,7 @@ const Header = () => {
             <div className='titulo'><h1>Clínica Dental</h1></div>
             <div id='nullTitulo'></div>
             <div className='imagenLogo'></div>
+    
 
             
         </header>

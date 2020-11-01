@@ -10,7 +10,7 @@ import './SignUp.scss';
 const SignUp = () => {
 
     // HOOK
-    const [customer, setCustomer] = useState({
+    const [customer, setCustomer] = useState ({
         name: "",
         surname: "",
         phone: {},
@@ -27,14 +27,18 @@ const SignUp = () => {
     // POST hacia la base de datos
      const  Send = () => {
         
-        axios.post ( 'https://backend-clinica-dental.herokuapp.com/customers/signup', customer )
-        .then (res => console.log ( res.data ).send ({ message: 'Te has registrado con exito.' }))
-        .catch (error => { console.log (error)})
+         axios.post ( 'http://localhost:3001/customers/signup', customer )
+         // 'https://backend-clinica-dental.herokuapp.com/customers/signup'
+         .then (res => {
 
-        setTimeout (() => {
-            redirect.push ('/')
-        }, 1500)
-    }
+            console.log ( res.data );
+            
+                setTimeout (() => {
+                    redirect.push ('/profile')
+                }, 1200)
+        })
+        .catch (error => { console.log (error)})
+     }
 
     return (
 
