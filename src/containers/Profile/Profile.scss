@@ -1,30 +1,37 @@
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap';
+
 .divProfile {
     display: flex;
-    flex-direction: row;
-    height: 60vh;
+    flex-direction: column ;
+    text-align: center;
+    height: 100vh;
 }
 
 .nullTop {
-    height: 10vh;
+    height: 15vh;
     width: 100vw;
 }
 
 .nullProfile {
-    text-align: start;
+    font-family: 'Pacifico', cursive;
+    font-size: x-large;
     height: 10vh;
-    width: 50vw;
+    width: 100vw;
 }
 
 ul {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    text-align: center;
     height: 50vh;
-    width: 50vw;
+    width: 96vw;
     color: black
 }
 
 li {
+    font-family: 'Pacifico', cursive;
+    font-size: large;
     list-style: none;
     color: black
 }

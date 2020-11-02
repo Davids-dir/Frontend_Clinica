@@ -35,8 +35,8 @@ const Login = () => {
 
             .then ( res => {
 
-                localStorage.setItem ('token', res.data.token);
-                localStorage.setItem('customer', JSON.stringify( res.data.customer ));
+                localStorage.setItem ( 'token', res.data.token );
+                localStorage.setItem ( 'customer',  JSON.stringify (res.data ));
                 console.log (res.data)
                 
                     setTimeout (() => {

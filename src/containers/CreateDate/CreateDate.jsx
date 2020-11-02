@@ -7,12 +7,14 @@ import axios from 'axios';
 import './CreateDate.scss';
 
 // Logica para realizar la creacion de la cita
-export const CreateDate = () => {
+const CreateDate = () => {
     
+    const customerData = JSON.parse ( localStorage.getItem ('customer'))
+
     // HOOK
-    const  [ date, setDate ] = useState ({
+    const  [ dates, setDates ] = useState ({
         reason: "",
-        date: Date,
+        day: Date,
         notes: ""
     });
 
@@ -20,16 +22,16 @@ export const CreateDate = () => {
     const redirect = useHistory ();
 
     // Manejador de eventos
-    const handleEvent = ev => { setDate ({ ...date })};
+    const handleEvent = ev => { setDates ({ ...dates, [ev.target.name]: ev.target.value })};
 
 
     const createDate = () => {
     // POST hacia la base de datos
 
-    axios.post ('http://localhost:3001/dates/create', date)
-    // 'https://backend-clinica-dental.herokuapp.com/dates/create'
+        axios.post ('http://localhost:3001/dates/create/' + customerData.loginCostumer._id, dates)
+        // 'https://backend-clinica-dental.herokuapp.com/dates/create'
 
-        .then (res => { 
+        .then ( res => { 
         
         console.log ( res.data )
         
@@ -47,7 +49,7 @@ export const CreateDate = () => {
                 <label>Motivo</label>
                 <input type="text" name='reason' onChange={handleEvent}/>
                 <label>Dia</label>
-                <input type="date" name='date' onChange={handleEvent}/>
+                <input type="date" name='day' onChange={handleEvent}/>
                 <label>Observaciones</label>
                 <input type="text" name='notes' onChange={handleEvent}/>
                 <button type="button" onClick={ () => { createDate () }}>Crear</button>

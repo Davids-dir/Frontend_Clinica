@@ -1,4 +1,5 @@
 @import 'https://fonts.googleapis.com/css2?family=Pacifico&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap';
 
 .header {
     display: flex;
@@ -9,11 +10,25 @@
 }
 
 .nullHeader  {
-    width: 4em;
+    width: 1em;
+}
+
+.customerData {
+    display: flex;
+    flex-direction: row;
+}
+
+.nullHeaderAlt {
+    width: 3em;
+}
+
+.customerNull {
+    display: flex;
+    flex-direction: row;
 }
 
 #nullTitulo {
-    width: 25em;
+    width: 22em;
 }
 
 .imagenLogo {
@@ -21,11 +36,11 @@
     background-size: 100%;
     height: 5em;
     width: 5em;
-    margin-left: 10%;
+    margin-left: 5%;
 }
 
 .titulo {
-        font-family: 'Pacifico', cursive;
+        font-family: 'Noto Sans JP', sans-serif;
         color: white;
         width: 20em;
         text-align: center;
@@ -33,8 +48,10 @@
 }
 
 .headerLink { 
+    text-align: center;
     text-decoration: none;
     color: whitesmoke;
+    width: 6em;
             
 &:hover {
     cursor: pointer;
