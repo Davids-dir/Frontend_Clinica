@@ -1,6 +1,6 @@
 // Importo los archivos necesarios
 import React, { useState } from 'react';
-import axios from 'axios';
+
 
 // Importo la hoja de estilos
 import './ShowDates.scss';

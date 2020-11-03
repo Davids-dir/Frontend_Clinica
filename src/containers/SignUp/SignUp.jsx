@@ -22,15 +22,18 @@ const SignUp = () => {
     const redirect = useHistory ();
 
     // Manejador de eventos
-    const handleEvent = ev => { setCustomer ({ ...customer, [ev.target.name]: ev.target.type === "number" ? +ev.target.value : ev.target.value })};
+    const handleEvent = ev => { setCustomer({ ...customer, [ev.target.name]: ev.target.value }); };
 
     // POST hacia la base de datos
      const  Send = () => {
         
          axios.post ( 'http://localhost:3001/customers/signup', customer )
          // 'https://backend-clinica-dental.herokuapp.com/customers/signup'
+         
          .then (res => {
 
+            //localStorage.setItem ( 'token', res.data.token );
+            localStorage.setItem ( 'customer', JSON.stringify ( res.data ));
             console.log ( res.data );
             
                 setTimeout (() => {

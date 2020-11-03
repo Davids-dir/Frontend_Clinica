@@ -5,11 +5,12 @@ import './Header.scss';
 
 const Header = ({ customer, setCustomer}) => {
     
-       /*const logout = () => {
+        // Funciona para limpiar el LocalStorage
+       const logout = () => {
             
-            localStorage.clear ();
+        localStorage.clear ();
             setCustomer (null)
-        }*/
+        }
 
     return (
         
@@ -19,21 +20,23 @@ const Header = ({ customer, setCustomer}) => {
             <Link to = '/' className= 'headerLink'>Inicio</Link>
             <div className = 'nullHeader'></div>
 
-            
+            { customer ?
                 <div className='customerData'>
                     <div className = 'nullHeader' ></div>
-                    {/*<Link to = '/' className='headerLink'>Cerrar sesion</Link>*/}
+                    <Link to = '/' className='headerLink' onClick={ logout }>Cerrar sesión</Link>
                 </div> 
+                :
                 <div className='customerNull'>
-                    <Link to = '/login' className= 'headerLink'>Iniciar sesion</Link>
+                    <Link to = '/login' className= 'headerLink'>Iniciar sesión</Link>
                     <div className = 'nullHeaderAlt' ></div>
                     <Link to = '/signup' className= 'headerLink'>Registrarse</Link>
-                </div>
+                </div> 
+            }
+
                 <div id='nullTitulo'></div>
                 <div className='titulo'><h1>Clínica Dental</h1></div>
                 <div id='nullTitulo'></div>
-                <div className='imagenLogo'></div>
-    
+                <div className='imagenLogo'></div> 
 
             
         </header>

@@ -9,8 +9,6 @@ const Login = () => {
 
     // HOOK
     const [customer, setCustomer] = useState({
-        name: "",
-        surname: "",
         email: "",
         password: ""
     })
@@ -19,16 +17,10 @@ const Login = () => {
     const redirect = useHistory ();
 
     // Manejador de eventos
-    const handleEvent = ev => { setCustomer({ ...customer, [ev.target.name]: ev.target.type === "number" ? +ev.target.value : ev.target.value }); };
+    const handleEvent = ev => { setCustomer({ ...customer, [ev.target.name]: ev.target.value }); };
 
+    // POST hacia la base de datos
     const Send = () => {
-
-        /*const body = {
-            name: customer.name,
-            surname: customer.surname,
-            email: customer.email,
-            password: customer.password
-        };*/
 
         axios.post ( 'http://localhost:3001/customers/login', customer )
         // 'https://backend-clinica-dental.herokuapp.com/customers/login'

@@ -20,7 +20,9 @@ const Profile = () => {
         
 
         .then ( res => { console.log (res.data)
-        
+            
+            localStorage.setItem ( 'dates', JSON.stringify ( res.data ));
+
             setTimeout = (() => {
                 redirect.push ('/showdates')
             }, 1200);

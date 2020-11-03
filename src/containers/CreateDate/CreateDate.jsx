@@ -12,7 +12,7 @@ const CreateDate = () => {
     const customerData = JSON.parse ( localStorage.getItem ('customer'))
 
     // HOOK
-    const  [ dates, setDates ] = useState ({
+    const  [ date, setDate ] = useState ({
         reason: "",
         day: Date,
         notes: ""
@@ -22,13 +22,13 @@ const CreateDate = () => {
     const redirect = useHistory ();
 
     // Manejador de eventos
-    const handleEvent = ev => { setDates ({ ...dates, [ev.target.name]: ev.target.value })};
+    const handleEvent = ev => { setDate ({ ...date, [ev.target.name]: ev.target.value })};
 
 
     const createDate = () => {
     // POST hacia la base de datos
 
-        axios.post ('http://localhost:3001/dates/create/' + customerData.loginCostumer._id, dates)
+        axios.post ('http://localhost:3001/dates/create/' + customerData.loginCostumer._id, date)
         // 'https://backend-clinica-dental.herokuapp.com/dates/create'
 
         .then ( res => { 
