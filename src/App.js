@@ -1,5 +1,5 @@
 // Importamos las librerias que necesitamos
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
@@ -15,11 +15,14 @@ import './App.css';
 
 function App () {
 
+// Variables
+const [ customer, setCustomer] = useState ( JSON.parse ( localStorage.getItem ('customer')));
+
   return (
 
     <BrowserRouter>
 
-      <Header/>
+      <Header customer={ customer} setCustomer={ setCustomer} />
 
       <Switch>
         
