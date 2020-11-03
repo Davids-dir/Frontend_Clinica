@@ -4,8 +4,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
 
-const Header = ({ customer, setCustomer}) => {
 
+
+const Header = ({ customer, setCustomer }) => {
 
         // Funciona para limpiar el LocalStorage
        const logout = () => {

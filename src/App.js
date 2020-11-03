@@ -15,14 +15,14 @@ import './App.css';
 
 function App () {
 
-// Variables
-const [ customer, setCustomer] = useState ( JSON.parse ( localStorage.getItem ('customer')));
-
+  // Variables
+  const [ customer, setCustomer] = useState ( JSON.parse ( localStorage.getItem ('customer')));
+  
   return (
 
     <BrowserRouter>
 
-      <Header customer={ customer} setCustomer={ setCustomer} />
+      <Header customer={ customer} setCustomer={ setCustomer } />
 
       <Switch>
         

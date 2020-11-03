@@ -17,8 +17,6 @@ const Profile = () => {
 
         axios.get ('http://localhost:3001/dates/show/' + customer.loginCostumer._id)
 
-        
-
         .then ( res => { console.log (res.data)
             
             localStorage.setItem ( 'dates', JSON.stringify ( res.data ));
@@ -39,7 +37,7 @@ const Profile = () => {
             <div className = 'nullProfile'>Panel de control
                 <ul>
                     <li><Link to = '/createdate' className = 'profileLink'>Reservar cita</Link></li>
-                    <li><Link to = '/showdate' className = 'profileLink' onClick={ () => { getDate () }}>Mostrar citas</Link></li>
+                    <li><Link to = '/showdates' className = 'profileLink' onClick={ () => { getDate () }}>Mostrar citas</Link></li>
                 </ul>
             </div>
         </div>
