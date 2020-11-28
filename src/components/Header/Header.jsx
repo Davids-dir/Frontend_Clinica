@@ -1,17 +1,16 @@
-// Importamos los archivos que necesitamos
+// Acceso a otros archivos o dependencias
 import React from 'react';
-
 import { Link } from 'react-router-dom';
+
+// Hoja de estilos
 import './Header.scss';
 
-
-
+// Contenedor HEADER
 const Header = ({ customer, setCustomer }) => {
 
-        // Funciona para limpiar el LocalStorage
+        // Función para limpiar el LocalStorage
        const logout = () => {
-            
-        localStorage.clear ();
+           localStorage.clear ();
             setCustomer (null)
         }
 
@@ -25,7 +24,7 @@ const Header = ({ customer, setCustomer }) => {
 
             { customer ?
                 <div className='customerData'>
-                    <div className = 'nullHeader' ></div>
+                    <div className = 'nullHeader'></div>
                     <Link to = '/' className='headerLink' onClick={ logout }>Cerrar sesión</Link>
                 </div> 
                 :

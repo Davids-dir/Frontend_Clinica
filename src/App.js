@@ -1,9 +1,9 @@
-// Importamos las librerias que necesitamos
+// Dependencias necesarias
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
-//  Importamos las rutas de acceso a otros archivos
+//  Acceso a otros archivos del proyecto
 import  Header from './components/Header/Header';
 import SignUp from './containers/SignUp/SignUp';
 import Login from './containers/Login/Login';
@@ -11,7 +11,9 @@ import Profile from './containers/Profile/Profile';
 import  CreateDate  from './containers/CreateDate/CreateDate';
 import ShowDates from './containers/ShowDates/ShowDates';
 
+// Hoja de estilos
 import './App.css';
+
 
 function App () {
 
