@@ -1,7 +1,7 @@
 // Importo las dependencias que vamos a emplear
 import axios from 'axios';
 import React from 'react'
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // import axios from 'axios';
 import './Profile.scss';
@@ -12,7 +12,7 @@ const Profile = () => {
 
     const customer = JSON.parse ( localStorage.getItem ('customer' ));
 
-    const redirect = useHistory ();
+    // const redirect = useHistory ();
     const getDate = () => {
 
         axios.get ('http://localhost:3001/dates/show/' + customer.loginCostumer._id)
@@ -21,9 +21,9 @@ const Profile = () => {
             
             localStorage.setItem ( 'dates', JSON.stringify ( res.data ));
 
-            setTimeout = (() => {
+            /* setTimeout = (() => {
                 redirect.push ('/showdates')
-            }, 1200);
+            }, 1200); */
         })
         .catch ( error => {
             console.log  ( error )

@@ -1,5 +1,3 @@
-@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap';
-
 .divProfile {
     display: flex;
     flex-direction: column ;
@@ -13,7 +11,6 @@
 }
 
 .nullProfile {
-    font-family: 'Pacifico', cursive;
     font-size: x-large;
     height: 10vh;
     width: 100vw;
@@ -30,7 +27,6 @@ ul {
 }
 
 li {
-    font-family: 'Pacifico', cursive;
     font-size: large;
     list-style: none;
     color: black

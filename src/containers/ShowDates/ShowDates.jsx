@@ -1,15 +1,15 @@
 // Importo los archivos necesarios
-import React, { useState } from 'react';
+import React from 'react';
 
 
 // Importo la hoja de estilos
 import './ShowDates.scss';
 
 
-// Logica para realizar la vista de las citas del cliente
+// Lógica para realizar la vista de las citas del cliente
 const ShowDates = () => {
 
-    const [ dates, setDates ] = useState (JSON.parse ( localStorage.getItem ('dates')))
+    // const [ dates, setDates ] = useState (JSON.parse ( localStorage.getItem ('dates')))
 
     return (
         
