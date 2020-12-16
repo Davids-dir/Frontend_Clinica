@@ -9,13 +9,14 @@ import './CreateDate.scss';
 // Logica para realizar la creacion de la cita
 const CreateDate = () => {
     
-    const customerData = JSON.parse ( localStorage.getItem ('customer'))
+    const customerData = JSON.parse(localStorage.getItem('customer'))
 
     // HOOK
     const  [ date, setDate ] = useState ({
         reason: "",
-        day: Date,
-        notes: ""
+        date: Date,
+        notes: "",
+        user_id: customerData.id,
     });
 
     // Importo la funcion para redirigir al cliente
@@ -28,18 +29,17 @@ const CreateDate = () => {
     const createDate = () => {
     // POST hacia la base de datos
 
-        axios.post ('http://localhost:3001/dates/create/' + customerData.loginCostumer._id, date)
+        axios.post ('http://localhost:8000/api/appointment', date)
         // 'https://backend-clinica-dental.herokuapp.com/dates/create'
 
-        .then ( res => { 
-        
-        console.log ( res.data )
-        
+        .then ( res => {
+
             setTimeout (() => {
                 redirect.push ('/profile')
             }, 1200)
         })
-        .catch ( error => { console.log ( error )})
+        .catch ( error => { console.log(error)})
+
     }
 
     return (
@@ -49,7 +49,7 @@ const CreateDate = () => {
                 <label>Motivo</label>
                 <input type="text" name='reason' onChange={handleEvent}/>
                 <label>Dia</label>
-                <input type="date" name='day' onChange={handleEvent}/>
+                <input type="date" name='date' onChange={handleEvent}/>
                 <label>Observaciones</label>
                 <input type="text" name='notes' onChange={handleEvent}/>
                 <button type="button" onClick={ () => { createDate () }}>Crear</button>

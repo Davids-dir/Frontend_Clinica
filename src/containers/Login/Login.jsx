@@ -22,22 +22,24 @@ const Login = () => {
     // POST hacia la base de datos
     const Send = () => {
 
-        axios.post ( 'http://localhost:3001/customers/login', customer )
-        // 'https://backend-clinica-dental.herokuapp.com/customers/login'
+        axios.post ( 'http://localhost:8000/api/user/login', customer )
 
             .then ( res => {
-
-                localStorage.setItem ( 'token', res.data.token );
-                localStorage.setItem ( 'customer',  JSON.stringify (res.data ));
-                console.log (res.data)
                 
-                    setTimeout (() => {
-                        redirect.push ('/profile')
-                    }, 1200);
+                console.log (res.data)
+                localStorage.setItem ( 'customer',  JSON.stringify (res.data[1]))
+                localStorage.setItem ( 'token', res.data[2].token )
+
+                setTimeout (() => {
+                    redirect.push ('/profile')
+                }, 1200);
+
             })
             .catch ( error => {
-                console.log ( error  )  
+                console.log ( error  )
+
             })
+
     };
 
     return (
@@ -47,7 +49,7 @@ const Login = () => {
                 <label>Email</label>
                 <input type="email" name='email' placeholder='Correo electronico' onChange={handleEvent} />
                 <label>Constraseña</label>
-                <input type="text" name='password' placeholder='Contraseña' onChange={handleEvent} />
+                <input type="password" name='password' placeholder='Contraseña' onChange={handleEvent} />
                 <button type='button' onClick={ () => { Send () }}>Enviar</button>
             </form>
         </div>

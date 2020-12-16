@@ -15,11 +15,12 @@ const Profile = () => {
     // const redirect = useHistory ();
     const getDate = () => {
 
-        axios.get ('http://localhost:3001/dates/show/' + customer.loginCostumer._id)
+        axios.get ('http://localhost:8000/api/costumer' + customer.id)
 
-        .then ( res => { console.log (res.data)
+        .then ( res => { 
             
-            localStorage.setItem ( 'dates', JSON.stringify ( res.data ));
+            console.log (res.data)
+            localStorage.setItem('dates', JSON.stringify (res.data ));
 
             /* setTimeout = (() => {
                 redirect.push ('/showdates')

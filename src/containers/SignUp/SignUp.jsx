@@ -1,6 +1,6 @@
 // Importo las dependencias necesarias
 import React, { useState } from 'react';
-import {useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 // Importo la hoja de estilos
@@ -12,35 +12,31 @@ const SignUp = () => {
     // HOOK
     const [customer, setCustomer] = useState ({
         name: "",
-        surname: "",
-        phone: {},
+        last_name: "",
+        telephone: "",
+        birthday: {},
         email: "",
-        password: ""
+        password: "",
     });
 
-    // Importo la funcion para redirigir al cliente
+    // Importo la función para redirigir al cliente
     const redirect = useHistory ();
 
-    // Manejador de eventos
+    // Manejo de eventos
     const handleEvent = ev => { setCustomer({ ...customer, [ev.target.name]: ev.target.value }); };
 
     // POST hacia la base de datos
-     const  Send = () => {
-        
-         axios.post ( 'http://localhost:3001/customers/signup', customer )
-         // 'https://backend-clinica-dental.herokuapp.com/customers/signup'
-         
-         .then (res => {
+     const Send = () => {
 
-            //localStorage.setItem ( 'token', res.data.token );
-            localStorage.setItem ( 'customer', JSON.stringify ( res.data ));
-            console.log ( res.data );
-            
+         axios.post( "http://localhost:8000/api/user", customer )
+
+         .then (res => {
+             
                 setTimeout (() => {
-                    redirect.push ('/profile')
+                    redirect.push ('/')
                 }, 1200)
         })
-        .catch (error => { console.log (error)})
+        .catch (error => {console.log(error)})
      }
 
     return (
@@ -49,15 +45,17 @@ const SignUp = () => {
             <form>
                 <label>Nombre</label>
                 <input type="text" name='name' placeholder='Nombre' onChange={handleEvent} />
-                <label>Apellido</label>
-                <input type="text" name='surname' placeholder='Apellidos' onChange={handleEvent} />
+                <label>Apellidos</label>
+                <input type="text" name='last_name' placeholder='Apellidos' onChange={handleEvent} />
                 <label>Teléfono</label>
-                <input type="text" name="phone" placeholder="Teléfono" onChange={handleEvent} />
+                <input type="text" name="telephone" placeholder="Teléfono" onChange={handleEvent} />
+                <label>Fecha de Nacimiento</label>
+                <input type="date" name="birthday" onChange={handleEvent} />
                 <label>Email</label>
-                <input type="email" name='email' placeholder='Correo electronico' onChange={handleEvent} />
-                <label>Constraseña</label>
-                <input type="text" name='password' placeholder='Contraseña' onChange={handleEvent} />
-                <button  type="button" onClick={ () =>  { Send () }}>Enviar</button>
+                <input type="text" name='email' placeholder='Correo electrónico' onChange={handleEvent} />
+                <label>Contraseña</label>
+                <input type="password" name='password' placeholder='Contraseña' onChange={handleEvent} />
+                <button type="button" onClick={ () =>  { Send () }}>Enviar</button>
             </form>
         </div>
     )

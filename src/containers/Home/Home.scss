@@ -1,0 +1,38 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  width: 100vw;
+}
+
+.null1 {
+  height: 100%;
+  width: 5%;
+}
+
+.contain-img {
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-image: url("../../img/portada.jpg");
+  background-size: contain;
+  height: 100%;
+  width: 55%;
+}
+
+.nullText {
+  height: 5%;
+  width: 100%;
+}
+
+.contain-text {
+  padding: 10px;
+  text-align: center;
+  height: 100%;
+  width: 40%;
+}
+
+p {
+  display: inline;
+  height: 50%;
+  width: 100%;
+}
